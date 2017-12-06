@@ -1,4 +1,6 @@
 .container {
+	display: flex;
+	flex-wrap: wrap;
 	position:absolute;
     width: 960px;
     height: 687px;
@@ -107,12 +109,12 @@
 
 #logOutBtn {
 	position: absolute;
-	background-color: rgb(226, 98, 92);
+	background-color: white;
 	padding: 17px;
 	left: 827px;
 	top:10px;
 	width:90px;
-	color:#FFF;
+	color: black;
 	font-family:sans-serif;
 	text-decoration: none;
 	text-align: center;
@@ -120,7 +122,8 @@
 }
 
 #logOutBtn:hover {
-	background-color: rgb(232, 48, 39);
+	background-color: white ;
+	color: red;
 }
 
 .chatMessagesPanel {

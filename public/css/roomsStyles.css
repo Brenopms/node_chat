@@ -1,5 +1,12 @@
+.flex {
+	display: flex;
+	flex: 1 1 460px;
+}
+
+
 .container {
-	position:absolute;
+	display: flex;
+	flex-wrap: wrap;
 	width: 460px;
 	height: 560px;
 	border:1px solid black;
@@ -119,12 +126,12 @@ input[name='roomName'] {
 
 #logOutBtn {
 	position: absolute;
-	background-color: rgb(226, 98, 92);
+	background-color: white;
 	padding: 17px;
 	left:327px;
 	top:10px;
 	width:90px;
-	color:#FFF;
+	color:black;
 	font-family:sans-serif;
 	text-decoration: none;
 	text-align: center;
@@ -132,6 +139,6 @@ input[name='roomName'] {
 }
 
 #logOutBtn:hover {
-	background-color: rgb(232, 48, 39);
+	color: red;
 }
 
