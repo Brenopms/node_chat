@@ -1,0 +1,4 @@
+{
+    "host": "http://localhost:3000",
+    "dbURI": "mongodb://brenopms:chatchat@ds125068.mlab.com:25068/chat_io"
+}

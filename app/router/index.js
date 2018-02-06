@@ -23,7 +23,7 @@ module.exports = () => {
 		},
 
 		'NA' : (req, res, next) => {
-			res.status(404).sendfile(process.cwd() + '/views/404.htm');
+			res.status(404).sendFile(process.cwd() + '/views/404.htm');
 		}
 
 	}
