@@ -20,7 +20,12 @@ module.exports = () => {
 
 		'post' : {
 
+		},
+
+		'NA' : (req, res, next) => {
+			res.status(404).sendfile(process.cwd() + '/views/404.htm');
 		}
+
 	}
 
 
