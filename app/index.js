@@ -1,5 +1,6 @@
 'use strict';
 
 module.exports = {
-	router: require('./router')()
+	router: require('./router')(),
+	session: require('./sessions')
 }

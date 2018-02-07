@@ -6,7 +6,9 @@ const chat = require('./app');
 
 app.set('port', process.env.PORT || 3000)
 app.use(express.static('public'));
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
+
+app.use(chat.session);
 
 app.use('/', chat.router);
 
