@@ -17,23 +17,20 @@ module.exports = () => {
 			'/chat': (req, res, next) => {
 				res.render('chatroom');
 			},
-			'/getsession': (req, res, next) => {
-				res.send('My favorite color:' + req.session.favColor);
-			},
-			'/setsession': (req, res, next) => {
-				req.session.favColor = 'red';
-				res.send('session set');
-			},
 			'/auth/facebook' : passport.authenticate('facebook'),
 			'/auth/facebook/callback' : passport.authenticate('facebook', {
 				successRedirect : '/rooms',
 				failure: '/'
 			}),
-			'/auth.twitter': passport.authenticate('twitter'),
+			'/auth/twitter': passport.authenticate('twitter'),
 			'/auth/twitter/callback': passport.authenticate('twitter', {
 				successRedirect : '/rooms',
 				failure: '/'
-			})
+			}),
+			'/logout': (req, res, next) => {
+				req.logout();
+				res.redirect('/');
+			}
 
 		},
 
