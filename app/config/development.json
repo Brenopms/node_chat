@@ -1,5 +1,11 @@
 {
     "host": "http://localhost:3000",
     "dbURI": "mongodb://brenopms:chatchat@ds125068.mlab.com:25068/chat_io",
-    "sessionSecret": "chatnode"
+    "sessionSecret": "chatnode",
+    "fb": {
+        "clientID": "174458833169694",
+        "clientSecret": "a1eeee39e971dc40f3ddf8300853b73c",
+        "callbackURL": "//localhost:3000/auth/facebook/callback",
+        "profileFields": ["id", "displayName", "photos"]
+    }
 }
