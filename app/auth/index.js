@@ -3,6 +3,7 @@ const passport = require('passport');
 const config = require('../config');
 const h = require('../helpers');
 const FacebookStrategy = require('passport-facebook').Strategy;
+const TwitterStrategy = require('passport-twitter').Strategy;
 
 module.exports = () => {
 
@@ -16,12 +17,14 @@ module.exports = () => {
             .catch(error => console.log('Error when deserializing the user'));
     });
 
+    //Auth 1.0 accessToek = Token , refreshToken = TokenSecret
     let authProcessor =  (accessToken, refreshToken, profile, done) => {
         //Find a user in the local db using profile.id
         h.findOne(profile.id)
             .then((result) => {
                 //if the user if found, return the user data using done()
                 if(result){
+                    console.log(profile);
                     done(null, result);
                 } else {
                     //if the user is not found, create one in the local db and return
@@ -33,4 +36,5 @@ module.exports = () => {
             })
     };
     passport.use(new FacebookStrategy(config.fb, authProcessor));
+    passport.use(new TwitterStrategy(config.twitter, authProcessor));
 }
