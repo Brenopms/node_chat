@@ -1,12 +1,5 @@
-.flex {
-	display: flex;
-	flex: 1 1 460px;
-}
-
-
 .container {
-	display: flex;
-	flex-wrap: wrap;
+	position:absolute;
 	width: 460px;
 	height: 560px;
 	border:1px solid black;
@@ -105,7 +98,7 @@ input[name='roomName'] {
     font-family: sans-serif;
     font-size: 20px;
     font-weight: normal;
-    top: 24px;
+    top: 2.5px;
     left: 77px;
     margin: 0;
 }
@@ -121,17 +114,16 @@ input[name='roomName'] {
 
 .userPicHolder > img {
 	width: 50px;
-	height: 50px;
 }
 
 #logOutBtn {
 	position: absolute;
-	background-color: white;
+	background-color: rgb(226, 98, 92);
 	padding: 17px;
-	left:327px;
-	top:10px;
+	left:317px;
+	top:2.5px;
 	width:90px;
-	color:black;
+	color:#FFF;
 	font-family:sans-serif;
 	text-decoration: none;
 	text-align: center;
@@ -139,6 +131,5 @@ input[name='roomName'] {
 }
 
 #logOutBtn:hover {
-	color: red;
+	background-color: rgb(232, 48, 39);
 }
-
