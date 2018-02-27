@@ -10,9 +10,10 @@ module.exports = () => {
 			},
 
 			'/rooms': (req, res, next) => {
-				res.render('rooms');
+				res.render('rooms', {
+					user: req.user
+				});
 			},
-
 			'/chat': (req, res, next) => {
 				res.render('chatroom');
 			},

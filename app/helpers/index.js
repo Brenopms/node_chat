@@ -45,7 +45,7 @@ let createNewUser = (profile) => {
 
 		let newChatUser = new db.userModel({
 			profileId: profile.id,
-			fullName: profile.fullName,
+			fullName: profile.displayName,
 			profilePic: profile.photos[0].value || ''
 		});
 
