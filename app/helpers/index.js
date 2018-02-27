@@ -9,7 +9,7 @@ let _registerRoutes = (routes, method) => {
 			_registerRoutes(routes[key], key)
 		}
 
-		else {
+	else {
 			// Register the router
 			if(method === 'get'){
 				router.get(key, routes[key]);
@@ -42,7 +42,8 @@ let findOne = profileID => {
 //Create a new user and return that instance
 let createNewUser = (profile) => {
 	return new Promise((resolve, reject) => {
-		let newChatUser = new deb.userModel({
+
+		let newChatUser = new db.userModel({
 			profileId: profile.id,
 			fullName: profile.fullName,
 			profilePic: profile.photos[0].value || ''
@@ -58,8 +59,23 @@ let createNewUser = (profile) => {
 	});
 }
 
+// the ES6 promisified version of findbyID
+
+let findById = id => {
+	return new Promise((resolve, reject) => {
+		db.userModel.findById(id, (error, user) => {
+			if(error) {
+				reject(error);
+			} else {
+				resolve(user);
+			}
+		});
+	});
+}
+
 module.exports =  {
 	route,
 	findOne,
-	createNewUser
+	createNewUser,
+	findById
 }
