@@ -39,6 +39,27 @@ let findOne = profileID => {
 	});
 }
 
+//Create a new user and return that instance
+let createNewUser = (profile) => {
+	return new Promise((resolve, reject) => {
+		let newChatUser = new deb.userModel({
+			profileId: profile.id,
+			fullName: profile.fullName,
+			profilePic: profile.photos[0].value || ''
+		});
+
+		newChatUser.save(error => {
+			if(error){
+				reject(error);
+			} else {
+				resolve(newChatUser)
+			}
+		});
+	});
+}
+
 module.exports =  {
-	route
+	route,
+	findOne,
+	createNewUser
 }
