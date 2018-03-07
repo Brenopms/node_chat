@@ -11,7 +11,24 @@
 	$(()  => {
 		let socket = io('<%= host %>' + '/roomslist');
 
-		socket.on('connect', () => console.log('Connected to Server'))
+		socket.on('connect', () => console.log('Connected to Server'));
+
+		let renderChatRooms = chatrooms => {
+			let roomsListDiv = $('#roomsListUL');
+			let listStr = '';
+			for (let chat of chatrooms){
+				listStr += `<a href="/chat/${chat.roomID}"><li>${chat.room}</li></a>`
+			}
+			roomsListDiv.html('').append(listStr);
+		}
+
+		//get a list of chatrooms
+		socket.emit('getChatrooms');
+
+		//Event listener for chatRoomsList
+		socket.on('chatRoomsList', chatrooms => {
+			renderChatRooms(JSON.parse(chatrooms));
+		});
 	});
 	</script>
 </head>
