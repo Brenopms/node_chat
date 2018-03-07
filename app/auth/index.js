@@ -24,7 +24,7 @@ module.exports = () => {
             .then((result) => {
                 //if the user if found, return the user data using done()
                 if(result){
-                    console.log(profile);
+                    // console.log(profile);
                     done(null, result);
                 } else {
                     //if the user is not found, create one in the local db and return
