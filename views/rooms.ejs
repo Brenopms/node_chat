@@ -34,7 +34,7 @@
 		$('#createBtn').on('click', () => {
 			if(newRoomInput.val() !== ''){
 				socket.emit('createNewRoom', newRoomInput.val());
-				newRoomInput.val() = '';
+				newRoomInput.val('');
 			}
 		})
 	});

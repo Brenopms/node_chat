@@ -45,7 +45,8 @@
 									<div class="userPic"><img src="${userPic}"></div>
 									<div class="chatMsg">${message}</div>
 								</div>`;
-				$(template).hide().appendTo(chatMessagesDiv).slideDown(200);
+				$(template).appendTo(chatMessagesDiv);
+				$(".chatMessages").scrollTop($(".chatMessages").scrollTop() + 68)
 			}
 
 			chatInput.on('keyup', function(e){
