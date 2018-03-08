@@ -100,6 +100,17 @@ let randomHex = () => {
 	return crypto.randomBytes(24).toString('hex');
 }
 
+// FInd a chatroom with a given ID
+let findRoomById = (allrooms, roomID) => {
+	return allrooms.find((element, index, array) => {
+		if(element.roomID === roomID){
+			return true;
+		} else {
+			return false;
+		}
+	});
+}
+
 module.exports =  {
 	route,
 	findOne,
@@ -107,5 +118,6 @@ module.exports =  {
 	findById,
 	isAuthenticated,
 	findRoomByName,
-	randomHex
+	randomHex,
+	findRoomById
 }
