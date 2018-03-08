@@ -1,25 +1,33 @@
 'use strict';
+const h = require('../helpers');
 
 module.exports = (io, app) => {
     let allrooms = app.locals.chatrooms;
 
-    allrooms.push({
-        room: 'Good Food',
-        roomID: '0001',
-        users: []
-    });
-
-    allrooms.push({
-        room: 'Cloud Computing',
-        roomID: '0002',
-        users: []
-    });
-
     io.of('/roomslist').on('connection', socket => {
         console.log('Socket.io connected to the client');
         socket.on('getChatrooms', () => {
-            console.log('nice');
             socket.emit('chatRoomsList', JSON.stringify(allrooms));
         });
+
+        socket.on('createNewRoom', newRoomInput => {
+            //check to see if a room with the same title exists
+            if(!h.findRoomByName(allrooms, newRoomInput)){
+                //create a new room 
+                allrooms.push({
+                    room: newRoomInput,
+                    roomID: h.randomHex(),
+                    users: []
+                });
+
+            //Emit an updated list to the creator of the chatroom
+            socket.emit('chatRoomsList', JSON.stringify(allrooms));
+
+            //Emit an updated list to everyone connected to the rooms page
+            socket.broadcast.emit('chatRoomsList', JSON.stringify(allrooms));
+
+            }
+        });
+
     });
 }
