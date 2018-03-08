@@ -39,6 +39,13 @@ module.exports = (io, app) => {
             //update the list of active users as shown on the chatroom page
             socket.broadcast.to(data.roomID).emit('updateUsersList', JSON.stringify(usersList.users));
             socket.emit('updateUsersList', JSON.stringify(usersList.users));
+
+            //When a socket exits
+            socket.on('disconnect', () => {
+                //find the room, to wich the socket is connected to and purge the user
+                let room = h.removeUserFromRoom(allrooms, socket);
+                socket.broadcast.to(room.roomID).emit('updateUsersList', JSON.stringify(room.users));
+            });
         });
     });
 }
