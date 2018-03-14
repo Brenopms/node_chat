@@ -8,6 +8,7 @@
 	left:0;
 	right:0;
 	margin:auto;
+	display: flex;
 }
 
 .titlePanel {
@@ -15,6 +16,7 @@
 	width: 460px;
 	height: 50px;
 	background-color: rgb(0,0,0);
+	display: flex;
 }
 
 .titlePanel > h1 {
@@ -35,6 +37,7 @@
 	width: 460px;
 	height: 70px;
 	border-bottom: 1px solid black;
+	display: flex;
 }
 
 input[name='roomName'] {
@@ -72,6 +75,7 @@ input[name='roomName'] {
 	height: 368px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	display: flex;
 }
 
 .roomsList {
@@ -118,12 +122,12 @@ input[name='roomName'] {
 
 #logOutBtn {
 	position: absolute;
-	background-color: rgb(226, 98, 92);
+	background-color: rgb(255, 255, 255);
 	padding: 17px;
 	left:317px;
 	top:2.5px;
 	width:90px;
-	color:#FFF;
+	color:#000;
 	font-family:sans-serif;
 	text-decoration: none;
 	text-align: center;
@@ -131,5 +135,5 @@ input[name='roomName'] {
 }
 
 #logOutBtn:hover {
-	background-color: rgb(232, 48, 39);
+	color: rgb(232, 48, 39);
 }
