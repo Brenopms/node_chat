@@ -13,7 +13,7 @@
   "author": "Breno Silva",
   "license": "ISC",
   "engines": {
-    "node": "4.8.6"
+    "node": "8.9.1"
   },
   "bugs": {
     "url": "https://github.com/Brenopms/node_chat/issues"
