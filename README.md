@@ -43,4 +43,4 @@ See also the list of [contributors](https://github.com/Brenopms/node_chat/contri
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](Lhttps://github.com/Brenopms/node_chat/blob/master/LICENSE) file for details
