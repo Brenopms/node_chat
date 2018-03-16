@@ -1,0 +1,22 @@
+{
+    "host": "http://localhost:3000",
+    "dbURI": "Your Mlab link",
+    "sessionSecret": "A sessionsecret for development",
+    "fb": {
+        "clientID": "Put a client ID",
+        "clientSecret": "Put a client clientSecret",
+        "callbackURL": "//localhost:3000/auth/facebook/callback",
+        "profileFields": ["id", "displayName", "photos"]
+    },
+    "twitter": {
+        "consumerKey": "Put a consumerKey",
+        "consumerSecret": "Put a client consumerSecret",
+        "callbackURL": "//localhost:3000/auth/twitter/callback",
+        "profileFields": ["id", "displayName", "photos"]
+    },
+    "redis": {
+        "host": "127.0.0.1",
+        "port": "6379",
+        "password": ""
+    }
+}
